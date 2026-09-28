@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lesson 5 - Variables & Calculator</title>
+</head>
+
+<body>
+
+    <h2>Lesson 5 Exercises</h2>
+
+    <script>
+
+        let name = "Mahi";
+
+        console.log(`My name is: ${name}`);
+
+
+        let cost = 5 + (2 * 3) + 9;
+
+        console.log(cost);
+
+        console.log(`Cost of food: $${cost}`);
+
+        let tax = cost * 0.1;
+
+
+        console.log(`Tax (10%): $${tax}`);
+
+        let totalCost = cost + tax;
+
+        console.log(`Total cost: $${totalCost}`);
+
+
+        let cartQuantity = 0;
+
+        cartQuantity += 4;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+        cartQuantity += 5;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+
+        // =========================
+        // 5i - Remove from cart
+        // =========================
+
+        cartQuantity -= 1;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+
+        // =========================
+        // 5j - Decrease by 2 and 3
+        // =========================
+
+        cartQuantity -= 2;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+        cartQuantity -= 3;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+
+        // =========================
+        // 5k - Using -- and -=
+        // =========================
+
+        cartQuantity--;
+
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+
+        // =================================
+        // 5l - Calculator HTML structure
+        // =================================
+
+        // Calculator is created below in HTML.
+
+
+        // =========================
+        // 5n - Calculation variable
+        // =========================
+
+        let calculation = "";
+
+
+        // =========================
+        // 5o - Button 1
+        // =========================
+
+        function press1() {
+            calculation += "1";
+            console.log(calculation);
+        }
+
+
+        // =========================
+        // 5p - Buttons 2, 3 and +
+        // =========================
+
+        function press2() {
+            calculation += "2";
+            console.log(calculation);
+        }
+
+        function press3() {
+            calculation += "3";
+            console.log(calculation);
+        }
+
+        function pressPlus() {
+            calculation += "+";
+            console.log(calculation);
+        }
+
+
+        // =========================
+        // 5q - Equal button
+        // =========================
+
+        function calculateResult() {
+
+            calculation = eval(calculation);
+
+            console.log(calculation);
+        }
+
+
+        // =========================
+        // 5r - Other buttons
+        // =========================
+
+        function press4() {
+            calculation += "4";
+            console.log(calculation);
+        }
+
+        function press5() {
+            calculation += "5";
+            console.log(calculation);
+        }
+
+        function press6() {
+            calculation += "6";
+            console.log(calculation);
+        }
+
+        function press7() {
+            calculation += "7";
+            console.log(calculation);
+        }
+
+        function press8() {
+            calculation += "8";
+            console.log(calculation);
+        }
+
+        function press9() {
+            calculation += "9";
+            console.log(calculation);
+        }
+
+        function press0() {
+            calculation += "0";
+            console.log(calculation);
+        }
+
+        function pressMinus() {
+            calculation += "-";
+            console.log(calculation);
+        }
+
+        function pressMultiply() {
+            calculation += "*";
+            console.log(calculation);
+        }
+
+        function pressDivide() {
+            calculation += "/";
+            console.log(calculation);
+        }
+
+    </script>
+
+
+    <!-- =========================
+         CALCULATOR
+         ========================= -->
+
+    <h2>Calculator</h2>
+
+    <p>
+        <button onclick="press1()">1</button>
+        <button onclick="press2()">2</button>
+        <button onclick="press3()">3</button>
+        <button onclick="pressPlus()">+</button>
+        <button onclick="calculateResult()">=</button>
+    </p>
+
+    <p>
+        <button onclick="press4()">4</button>
+        <button onclick="press5()">5</button>
+        <button onclick="press6()">6</button>
+        <button onclick="pressMinus()">-</button>
+    </p>
+
+    <p>
+        <button onclick="press7()">7</button>
+        <button onclick="press8()">8</button>
+        <button onclick="press9()">9</button>
+        <button onclick="pressMultiply()">*</button>
+    </p>
+
+    <p>
+        <button onclick="press0()">0</button>
+        <button onclick="pressDivide()">/</button>
+    </p>
+
+</body>
+
+</html>

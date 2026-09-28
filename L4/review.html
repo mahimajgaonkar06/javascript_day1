@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buttons</title>
+
+    <style>
+        /* 4e - Button styling */
+        .add-cart {
+            background-color: yellow;
+        }
+
+        .buy-now {
+            background-color: orange;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+
+        /* 4i - Product design */
+        .product {
+            width: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 4a -->
+    <h3>4a</h3>
+    <button>Click</button>
+
+
+    <!-- 4b -->
+    <h3>4b</h3>
+    <button>Simon</button>
+    <button>Chocolate</button>
+
+
+    <!-- 4c -->
+    <h3>4c</h3>
+    <p>Hello, world!</p>
+
+
+    <!-- 4d -->
+    <h3>4d</h3>
+    <p>Hello, world!</p>
+    <p>Today I went to the grocery store to buy some eggs and vegetables.</p>
+
+
+    <!-- 4e -->
+    <h3>4e</h3>
+    <button class="add-cart">Add to cart</button>
+    <button class="buy-now">Buy now</button>
+
+
+    <!-- 4h -->
+    <h3>4h</h3>
+    <p>Open the browser console to see the message.</p>
+
+
+    <!-- 4i -->
+    <div class="product">
+        <p>Adults Plain Cotton T-shirt</p>
+        <p>Price: $7.99</p>
+
+        <button
+            class="add-cart"
+            onclick="alert('Added')">
+            Add to cart
+        </button>
+
+        <button
+            class="buy-now"
+            onclick="buyNow()">
+            Buy now
+        </button>
+    </div>
+
+
+    <script>
+        // 4h
+        console.log("Welcome!");
+
+        // 4j
+        function buyNow() {
+            console.log("Loading...");
+
+            alert("Purchased");
+        }
+    </script>
+
+</body>
+</html>
