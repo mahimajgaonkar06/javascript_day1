@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 9 - DOM</title>
+</head>
+
+<body>
+
+    <!-- =====================================
+         9a - Get button using querySelector
+         ===================================== -->
+
+    <button>9a</button>
+
+    <script>
+        const button9a = document.querySelector("button");
+
+        console.log(button9a);
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9b - Change button text
+         ===================================== -->
+
+    <button class="button-9b">9b</button>
+
+    <script>
+        const button9b = document.querySelector(".button-9b");
+
+        button9b.innerHTML = "9b done";
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9c - Heads and Tails
+         ===================================== -->
+
+    <button class="heads-button">heads</button>
+    <button class="tails-button">tails</button>
+
+    <p class="result"></p>
+
+    <script>
+        const headsButton = document.querySelector(".heads-button");
+        const tailsButton = document.querySelector(".tails-button");
+        const result = document.querySelector(".result");
+
+        headsButton.addEventListener("click", function () {
+            result.innerHTML = "You chose: heads";
+        });
+
+        tailsButton.addEventListener("click", function () {
+            result.innerHTML = "You chose: tails";
+        });
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9d - Text box and Submit button
+         ===================================== -->
+
+    <input class="name-input" placeholder="Enter your name">
+
+    <button class="submit-button">Submit</button>
+
+    <p class="name-result"></p>
+
+    <script>
+        const nameInput = document.querySelector(".name-input");
+        const submitButton = document.querySelector(".submit-button");
+        const nameResult = document.querySelector(".name-result");
+
+        submitButton.addEventListener("click", function () {
+
+            const text = nameInput.value;
+
+            nameResult.innerHTML = `Your name is: ${text}`;
+
+        });
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9e + 9f - Enter key + Function
+         ===================================== -->
+
+    <input class="name-input-2" placeholder="Enter your name">
+
+    <button class="submit-button-2">Submit</button>
+
+    <p class="name-result-2"></p>
+
+    <script>
+
+        const nameInput2 = document.querySelector(".name-input-2");
+        const submitButton2 = document.querySelector(".submit-button-2");
+        const nameResult2 = document.querySelector(".name-result-2");
+
+
+        // 9f - Function to reuse the code
+
+        function displayName() {
+
+            const text = nameInput2.value;
+
+            nameResult2.innerHTML = `Your name is: ${text}`;
+
+        }
+
+
+        // Submit button
+
+        submitButton2.addEventListener("click", function () {
+
+            displayName();
+
+        });
+
+
+        // 9e - Press Enter
+
+        nameInput2.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+
+                displayName();
+
+            }
+
+        });
+
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9g - Amazon Shipping Calculator
+         Fix decimal issue
+         ===================================== -->
+
+    <h3>Amazon Shipping Calculator</h3>
+
+    <input class="cost-input" placeholder="Cost">
+
+    <button class="calculate-button">
+        Calculate
+    </button>
+
+    <p class="shipping-result"></p>
+
+
+    <script>
+
+        const costInput = document.querySelector(".cost-input");
+        const calculateButton =
+            document.querySelector(".calculate-button");
+
+        const shippingResult =
+            document.querySelector(".shipping-result");
+
+
+        calculateButton.addEventListener("click", function () {
+
+            const cost = Number(costInput.value);
+
+            const totalCost = cost + 10;
+
+            // Fix floating-point decimal problem
+            const roundedCost =
+                Math.round(totalCost * 100) / 100;
+
+            shippingResult.innerHTML = `$${roundedCost}`;
+
+        });
+
+    </script>
+
+
+    <br><br>
+
+
+    <!-- =====================================
+         9h - Input event / onkeyup
+         ===================================== -->
+
+    <h3>Live Text</h3>
+
+    <input
+        class="live-input"
+        placeholder="Type something"
+    >
+
+    <p class="live-result"></p>
+
+
+    <script>
+
+        const liveInput =
+            document.querySelector(".live-input");
+
+        const liveResult =
+            document.querySelector(".live-result");
+
+
+        liveInput.addEventListener("keyup", function () {
+
+            liveResult.innerHTML = liveInput.value;
+
+        });
+
+    </script>
+
+
+    <!-- =====================================
+         9i
+         Improve Cart Quantity Project
+         ===================================== -->
+
+    <br><br>
+
+    <h3>Cart Quantity</h3>
+
+    <button onclick="updateCartQuantity(-1)">-</button>
+
+    <span id="cartQuantity">0</span>
+
+    <button onclick="updateCartQuantity(1)">+</button>
+
+
+    <script>
+
+        let cartQuantity = 0;
+
+
+        function updateCartQuantity(change) {
+
+            cartQuantity += change;
+
+
+            if (cartQuantity < 0) {
+
+                cartQuantity = 0;
+
+            }
+
+
+            if (cartQuantity > 10) {
+
+                cartQuantity = 10;
+
+            }
+
+
+            document.querySelector("#cartQuantity")
+                .innerHTML = cartQuantity;
+
+        }
+
+    </script>
+
+</body>
+</html>

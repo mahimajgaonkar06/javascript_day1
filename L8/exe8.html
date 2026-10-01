@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 8 - Objects</title>
+</head>
+
+<body>
+
+    <h2>Lesson 8 - Objects</h2>
+
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+
+    <script>
+
+        // ==========================================
+        // 8a - Create a basketball product object
+        // ==========================================
+
+        const basketball = {
+            name: "basketball",
+            price: 2095
+        };
+
+        console.log(basketball);
+
+
+        // ==========================================
+        // 8b - Increase price by 500
+        // ==========================================
+
+        basketball.price += 500;
+
+        console.log(basketball);
+
+
+        // ==========================================
+        // 8c - Add delivery-time using bracket notation
+        // ==========================================
+
+        basketball["delivery-time"] = "3 days";
+
+        console.log(basketball);
+
+
+        // ==========================================
+        // 8d - comparePrice()
+        // ==========================================
+
+        function comparePrice(product1, product2) {
+
+            if (product1.price < product2.price) {
+                return product1;
+            } else {
+                return product2;
+            }
+
+        }
+
+        const product1 = {
+            name: "Basketball",
+            price: 2595
+        };
+
+        const product2 = {
+            name: "Football",
+            price: 1995
+        };
+
+        console.log(comparePrice(product1, product2));
+
+
+        // ==========================================
+        // 8e - isSameProduct()
+        // ==========================================
+
+        function isSameProduct(product1, product2) {
+
+            if (
+                product1.name === product2.name &&
+                product1.price === product2.price
+            ) {
+                return true;
+            }
+
+            return false;
+        }
+
+        const product3 = {
+            name: "Basketball",
+            price: 2595
+        };
+
+        const product4 = {
+            name: "Basketball",
+            price: 2595
+        };
+
+        console.log(isSameProduct(product3, product4));
+
+
+        // ==========================================
+        // 8f - Convert string to lowercase
+        // ==========================================
+
+        const greeting = "Good Morning";
+
+        console.log(greeting.toLowerCase());
+
+
+        // ==========================================
+        // 8g - Repeat a string
+        // ==========================================
+
+        const word = "test";
+
+        console.log(word.repeat(2));
+
+
+        // ==========================================
+        // 8h - LocalStorage Calculator
+        // ==========================================
+
+        let calculation = localStorage.getItem("calculation");
+
+        if (calculation === null) {
+            calculation = "";
+        }
+
+        console.log("Saved calculation:", calculation);
+
+
+        function saveCalculation() {
+            localStorage.setItem("calculation", calculation);
+        }
+
+        function addNumber(number) {
+            calculation += number;
+            saveCalculation();
+            console.log(calculation);
+        }
+
+        function clearCalculation() {
+            calculation = "";
+            saveCalculation();
+            console.log(calculation);
+        }
+
+
+        // ==========================================
+        // 8i - Coin Flip Game
+        // ==========================================
+
+        function playGame(guess) {
+
+            const randomNumber = Math.random();
+
+            let result;
+
+            if (randomNumber < 0.5) {
+                result = "heads";
+            } else {
+                result = "tails";
+            }
+
+            if (guess === result) {
+
+                score.wins += 1;
+
+                console.log(
+                    `You chose ${guess}. Coin: ${result}. You win!`
+                );
+
+            } else {
+
+                score.losses += 1;
+
+                console.log(
+                    `You chose ${guess}. Coin: ${result}. You lose!`
+                );
+            }
+
+            saveScore();
+
+            console.log(score);
+        }
+
+
+        // ==========================================
+        // 8j - Score Object
+        // ==========================================
+
+        let score = {
+            wins: 0,
+            losses: 0
+        };
+
+
+        // ==========================================
+        // 8k - LocalStorage for Score
+        // ==========================================
+
+        const savedScore = localStorage.getItem("score");
+
+        if (savedScore !== null) {
+
+            score = JSON.parse(savedScore);
+
+        }
+
+
+        function saveScore() {
+
+            localStorage.setItem(
+                "score",
+                JSON.stringify(score)
+            );
+
+        }
+
+
+        console.log("Current Score:", score);
+
+    </script>
+
+</body>
+</html>

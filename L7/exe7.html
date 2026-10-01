@@ -1,0 +1,182 @@
+// ================================
+// 7a - greet()
+// ================================
+
+function greet() {
+    console.log("Hello!");
+}
+
+greet();
+greet();
+greet();
+
+
+// ================================
+// 7b - greet(name)
+// ================================
+
+function greetName(name) {
+    console.log(`Hello ${name}!`);
+}
+
+greetName("Simon");
+greetName("Mahi");
+greetName("John");
+
+
+// ================================
+// 7c - greet() without name
+// ================================
+
+function greetPerson(name) {
+    if (name) {
+        console.log(`Hello ${name}!`);
+    } else {
+        console.log("Hi there!");
+    }
+}
+
+greetPerson("Mahi");
+greetPerson();
+
+
+// ================================
+// 7d - Celsius to Fahrenheit
+// ================================
+
+function convertToFahrenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+
+console.log(convertToFahrenheit(25));
+
+
+// ================================
+// 7e - Fahrenheit to Celsius
+// ================================
+
+function convertToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+console.log(convertToCelsius(86));
+
+
+// ================================
+// 7f - Temperature Converter
+// ================================
+
+function convertTemperature(degrees, unit) {
+
+    if (unit === "C") {
+        return `${convertToFahrenheit(degrees)}F`;
+
+    } else if (unit === "F") {
+        return `${convertToCelsius(degrees)}C`;
+    }
+}
+
+console.log(convertTemperature(25, "C"));
+console.log(convertTemperature(86, "F"));
+
+
+// ================================
+// 7g + 7h + 7i - Length Converter
+// ================================
+
+function convertLength(length, from, to) {
+
+    // Miles to Kilometers
+    if (from === "miles" && to === "km") {
+        return `${length * 1.6} km`;
+    }
+
+    // Kilometers to Miles
+    else if (from === "km" && to === "miles") {
+        return `${length / 1.6} miles`;
+    }
+
+    // Miles to Feet
+    else if (from === "miles" && to === "ft") {
+        return `${length * 5280} ft`;
+    }
+
+    // Kilometers to Feet
+    else if (from === "km" && to === "ft") {
+        return `${length * 3281} ft`;
+    }
+
+    // Feet to Miles
+    else if (from === "ft" && to === "miles") {
+        return `${length / 5280} miles`;
+    }
+
+    // Feet to Kilometers
+    else if (from === "ft" && to === "km") {
+        return `${length / 3281} km`;
+    }
+
+    // Same unit
+    else if (from === to) {
+        return `${length} ${to}`;
+    }
+
+    // Invalid unit
+    else {
+        return `Invalid unit: ${from}`;
+    }
+}
+
+
+// 7g examples
+console.log(convertLength(50, "miles", "km"));
+console.log(convertLength(32, "km", "miles"));
+console.log(convertLength(50, "km", "km"));
+
+
+// 7h examples
+console.log(convertLength(5, "miles", "km"));
+console.log(convertLength(5, "miles", "ft"));
+console.log(convertLength(5, "km", "ft"));
+
+
+// 7i example
+console.log(convertLength(5, "lbs", "lbs"));
+
+
+// ================================
+// 7j - Calculator
+// ================================
+
+// 7j depends on the Calculator project
+// from exercise 5r.
+
+
+// ================================
+// 7k - Cart Quantity
+// ================================
+
+// 7k depends on the Cart Quantity project
+// from exercise 6l.
+
+
+// ================================
+// 7l - Early Return
+// ================================
+
+let cartQuantity = 8;
+
+function updateCartQuantity(quantity) {
+
+    if (quantity > 10) {
+        alert("The cart is full");
+        return;
+    }
+
+    cartQuantity = quantity;
+
+    console.log(`Cart quantity: ${cartQuantity}`);
+}
+
+updateCartQuantity(5);
+updateCartQuantity(11);
